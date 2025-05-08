@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luna's Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #fcd5ce, #ffccf9);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #6b006b;
+      padding: 2rem;
+    }
+    .question-card {
+      background-color: #fff0f5;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .answers label {
+      display: block;
+      background-color: #ffb6c1;
+      padding: 0.6rem 1rem;
+      margin: 0.4rem 0;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .answers input[type="radio"] {
+      display: none;
+    }
+    .answers label:hover {
+      background-color: #ff99aa;
+    }
+    .feedback {
+      margin-top: 0.8rem;
+      font-style: italic;
+      color: #aa006a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>"How Well Do You Know Me?" Quiz TIME</h1>
+
+  <div class="question-card">
+    <div class="question">1. What's my most unserious red flag?</div>
+    <div class="answers">
+      <label><input type="radio" name="q1" onclick="feedback(this, false, 1)"> a. I name my pimples</label>
+      <label><input type="radio" name="q1" onclick="feedback(this, false, 1)"> b. I ghost people for fun</label>
+      <label><input type="radio" name="q1" onclick="feedback(this, false, 1)"> c. I eat cereal with water</label>
+      <label><input type="radio" name="q1" onclick="feedback(this, true, 1)"> d. I talk to myself in the mirror</label>
+    </div>
+    <div class="feedback" id="fb1"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">2. What’s my actual secret superpower?</div>
+    <div class="answers">
+      <label><input type="radio" name="q2" onclick="feedback(this, false, 2)"> a. I can teleport (but only when no one's looking)</label>
+      <label><input type="radio" name="q2" onclick="feedback(this, false, 2)"> b. I sense drama from miles away</label>
+      <label><input type="radio" name="q2" onclick="feedback(this, true, 2)"> c. I can read people based on looks and vibes</label>
+      <label><input type="radio" name="q2" onclick="feedback(this, false, 2)"> d. I always know when food’s ready</label>
+    </div>
+    <div class="feedback" id="fb2"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">3. What emoji describes me best?</div>
+    <div class="answers">
+      <label><input type="radio" name="q3" onclick="feedback(this, false, 3)"> a. 😈</label>
+      <label><input type="radio" name="q3" onclick="feedback(this, false, 3)"> b. 🥴</label>
+      <label><input type="radio" name="q3" onclick="feedback(this, false, 3)"> c. 😵‍💫</label>
+      <label><input type="radio" name="q3" onclick="feedback(this, false, 3)"> d. 🦋</label>
+    </div>
+    <div class="feedback" id="fb3"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">4. What’s one food I’d fight a child over?</div>
+    <div class="answers">
+      <label><input type="radio" name="q4" onclick="feedback(this, false, 4, true)"> a. Pizza</label>
+      <label><input type="radio" name="q4" onclick="feedback(this, false, 4, true)"> b. Chocolate cake</label>
+      <label><input type="radio" name="q4" onclick="feedback(this, false, 4, true)"> c. French fries</label>
+      <label><input type="radio" name="q4" onclick="feedback(this, false, 4, true)"> d. Chicken nuggets</label>
+    </div>
+    <div class="feedback" id="fb4"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">5. If I disappeared, you’d probably find me…</div>
+    <div class="answers">
+      <label><input type="radio" name="q5" onclick="feedback(this, true, 5)"> a. Hiding in a blanket burrito googling STUFF</label>
+      <label><input type="radio" name="q5" onclick="feedback(this, false, 5)"> b. In a forest talking to squirrels</label>
+      <label><input type="radio" name="q5" onclick="feedback(this, false, 5)"> c. At a bookstore pretending I read</label>
+      <label><input type="radio" name="q5" onclick="feedback(this, false, 5)"> d. At the gym (LMAO)</label>
+    </div>
+    <div class="feedback" id="fb5"></div>
+  </div>
+
+  <script>
+    const feedbackTexts = {
+      1: {
+        true: "mirror talks = therapy",
+        false: "LMAO no?? You clearly haven't been in my bathroom at 2am."
+      },
+      2: {
+        true: "That's right. I see through souls like sunglasses",
+        false: "Nope. I'm not magic… I'm just observant 😌"
+      },
+      3: {
+        false: "Hmm... interesting choice. I’ll judge you in silence 😏"
+      },
+      4: {
+        false: "WELL IT DOESN'T MATTER!! I would fight any child over ANY FOOD. 🥊🍗"
+      },
+      5: {
+        true: "Yes. don't ask what kinda stuff lady.",
+        false: "Really? Me? There? Delete my number."
+      }
+    };
+
+    function feedback(input, isCorrect, qNum, alwaysWrong = false) {
+      const fb = document.getElementById(`fb${qNum}`);
+      const textSet = feedbackTexts[qNum];
+      fb.innerText = alwaysWrong ? textSet.false : (isCorrect ? textSet.true : textSet.false);
+    }
+  </script>
+
+</body>
+</html>
