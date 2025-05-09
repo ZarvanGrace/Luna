@@ -84,7 +84,18 @@
   </div>
 
   <div class="question-card">
-    <div class="question">4. What emoji describes me best?</div>
+    <div class="question">4. What’s my natural habitat?</div>
+    <div class="answers">
+      <label><input type="radio" name="q7" onclick="feedback('a', 7)"> a. In front of a screen</label>
+      <label><input type="radio" name="q7" onclick="feedback('b', 7)"> b. Beside the Wi-Fi</label>
+      <label><input type="radio" name="q7" onclick="feedback('c', 7)"> c. In bed with 5 pillows</label>
+      <label><input type="radio" name="q7" onclick="feedback('d', 7)"> d. All of the above</label>
+    </div>
+    <div class="feedback" id="fb7"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">5. What emoji describes me best?</div>
     <div class="answers">
       <label><input type="radio" name="q3" onclick="feedback('a', 3)"> a. 😈</label>
       <label><input type="radio" name="q3" onclick="feedback('b', 3)"> b. 🥴</label>
@@ -95,7 +106,18 @@
   </div>
 
   <div class="question-card">
-    <div class="question">5. What’s one food I’d fight a child over?</div>
+    <div class="question">6. If I had a warning label, what would it say?</div>
+    <div class="answers">
+      <label><input type="radio" name="q8" onclick="feedback('a', 8)"> a. Awesomeness may occur randomly</label>
+      <label><input type="radio" name="q8" onclick="feedback('b', 8)"> b. Do not disturb before a round of gaming</label>
+      <label><input type="radio" name="q8" onclick="feedback('c', 8)"> c. 80% Nerdy</label>
+      <label><input type="radio" name="q8" onclick="feedback('d', 8)"> d. Handle with memes</label>
+    </div>
+    <div class="feedback" id="fb8"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">7. What’s one food I’d fight a child over?</div>
     <div class="answers">
       <label><input type="radio" name="q4" onclick="feedback('a', 4)"> a. Pizza</label>
       <label><input type="radio" name="q4" onclick="feedback('b', 4)"> b. Chocolate cake</label>
@@ -106,7 +128,18 @@
   </div>
 
   <div class="question-card">
-    <div class="question">6. If I disappeared, you’d probably find me…</div>
+    <div class="question">8. What would I never admit, but secretly want?</div>
+    <div class="answers">
+      <label><input type="radio" name="q9" onclick="feedback('a', 9)"> a. Someone to game with</label>
+      <label><input type="radio" name="q9" onclick="feedback('b', 9)"> b. A girl who laughs at his jokes</label>
+      <label><input type="radio" name="q9" onclick="feedback('c', 9)"> c. A hug while ranting about bad Wi-Fi</label>
+      <label><input type="radio" name="q9" onclick="feedback('d', 9)"> d. All of the above, but he’ll deny it 100%</label>
+    </div>
+    <div class="feedback" id="fb9"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">9. If I disappeared, you’d probably find me…</div>
     <div class="answers">
       <label><input type="radio" name="q5" onclick="feedback('a', 5)"> a. Hiding in a blanket burrito</label>
       <label><input type="radio" name="q5" onclick="feedback('b', 5)"> b. In a forest talking to squirrels</label>
@@ -153,6 +186,24 @@
         b: "The most boring option you could ever choose... ugh",
         c: "Did you just call me a monkey? 😑",
         d: "YES, cause I'm taken out to the wilderness"
+      },
+      7: {
+        a: "I'm trying to quit... It's like smoking",
+        b: "Come on! The internet is much faster there",
+        c: "Yes I have 3 big pillows and 2 little... I like hugging pillows >:(",
+        d: "RING RING RING WE HAVE A WINNER"
+      },
+      8: {
+        a: "Actually, weirdness may occur randomly. Nothing awesome is happening",
+        b: "I NEEEEED IT",
+        c: "Good job! You're wrong! I'm 81% nerdy MINIMUM",
+        d: "Nah. I'm handled with affection"
+      },
+      9: {
+        a: "NO. I HAVE FUN ALONE.",
+        b: "Pff... I don't care if you don't laugh 🙄",
+        c: "NO THANK YOU. I can handle it myself.",
+        d: "I'LL DENY IT TILL THE DAY I DIE."
       }
     };
 
@@ -162,6 +213,5 @@
       fb.innerText = textSet[option] || "No feedback found.";
     }
   </script>
-
 </body>
 </html>
