@@ -53,54 +53,65 @@
   <div class="question-card">
     <div class="question">1. What's my most unserious red flag?</div>
     <div class="answers">
-      <label><input type="radio" name="q1" onclick="feedback(this, false, 1)"> a. I name my pimples</label>
-      <label><input type="radio" name="q1" onclick="feedback(this, false, 1)"> b. I ghost people for fun</label>
-      <label><input type="radio" name="q1" onclick="feedback(this, false, 1)"> c. I eat cereal with water</label>
-      <label><input type="radio" name="q1" onclick="feedback(this, true, 1)"> d. I talk to myself in the mirror</label>
+      <label><input type="radio" name="q1" onclick="feedback('a', 1)"> a. I name my pimples</label>
+      <label><input type="radio" name="q1" onclick="feedback('b', 1)"> b. I ghost people for fun</label>
+      <label><input type="radio" name="q1" onclick="feedback('c', 1)"> c. I eat cereal with water</label>
+      <label><input type="radio" name="q1" onclick="feedback('d', 1)"> d. I talk to myself in the mirror</label>
     </div>
     <div class="feedback" id="fb1"></div>
   </div>
 
   <div class="question-card">
-    <div class="question">2. What’s my actual secret superpower?</div>
+    <div class="question">2. What am I on Fridays?</div>
     <div class="answers">
-      <label><input type="radio" name="q2" onclick="feedback(this, false, 2)"> a. I can teleport (but only when no one's looking)</label>
-      <label><input type="radio" name="q2" onclick="feedback(this, false, 2)"> b. I sense drama from miles away</label>
-      <label><input type="radio" name="q2" onclick="feedback(this, true, 2)"> c. I can read people based on looks and vibes</label>
-      <label><input type="radio" name="q2" onclick="feedback(this, false, 2)"> d. I always know when food’s ready</label>
+      <label><input type="radio" name="q6" onclick="feedback('a', 6)"> a. Batman</label>
+      <label><input type="radio" name="q6" onclick="feedback('b', 6)"> b. Zarvan</label>
+      <label><input type="radio" name="q6" onclick="feedback('c', 6)"> c. Monkey</label>
+      <label><input type="radio" name="q6" onclick="feedback('d', 6)"> d. Tarzan</label>
+    </div>
+    <div class="feedback" id="fb6"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">3. What’s my actual secret superpower?</div>
+    <div class="answers">
+      <label><input type="radio" name="q2" onclick="feedback('a', 2)"> a. I can teleport</label>
+      <label><input type="radio" name="q2" onclick="feedback('b', 2)"> b. I sense drama from miles away</label>
+      <label><input type="radio" name="q2" onclick="feedback('c', 2)"> c. I can read people based on looks and vibes</label>
+      <label><input type="radio" name="q2" onclick="feedback('d', 2)"> d. I always know when food’s ready</label>
     </div>
     <div class="feedback" id="fb2"></div>
   </div>
 
   <div class="question-card">
-    <div class="question">3. What emoji describes me best?</div>
+    <div class="question">4. What emoji describes me best?</div>
     <div class="answers">
-      <label><input type="radio" name="q3" onclick="feedback(this, false, 3)"> a. 😈</label>
-      <label><input type="radio" name="q3" onclick="feedback(this, false, 3)"> b. 🥴</label>
-      <label><input type="radio" name="q3" onclick="feedback(this, false, 3)"> c. 😵‍💫</label>
-      <label><input type="radio" name="q3" onclick="feedback(this, false, 3)"> d. 🦋</label>
+      <label><input type="radio" name="q3" onclick="feedback('a', 3)"> a. 😈</label>
+      <label><input type="radio" name="q3" onclick="feedback('b', 3)"> b. 🥴</label>
+      <label><input type="radio" name="q3" onclick="feedback('c', 3)"> c. 😁</label>
+      <label><input type="radio" name="q3" onclick="feedback('d', 3)"> d. 🦋</label>
     </div>
     <div class="feedback" id="fb3"></div>
   </div>
 
   <div class="question-card">
-    <div class="question">4. What’s one food I’d fight a child over?</div>
+    <div class="question">5. What’s one food I’d fight a child over?</div>
     <div class="answers">
-      <label><input type="radio" name="q4" onclick="feedback(this, false, 4, true)"> a. Pizza</label>
-      <label><input type="radio" name="q4" onclick="feedback(this, false, 4, true)"> b. Chocolate cake</label>
-      <label><input type="radio" name="q4" onclick="feedback(this, false, 4, true)"> c. French fries</label>
-      <label><input type="radio" name="q4" onclick="feedback(this, false, 4, true)"> d. Chicken nuggets</label>
+      <label><input type="radio" name="q4" onclick="feedback('a', 4)"> a. Pizza</label>
+      <label><input type="radio" name="q4" onclick="feedback('b', 4)"> b. Chocolate cake</label>
+      <label><input type="radio" name="q4" onclick="feedback('c', 4)"> c. Luna</label>
+      <label><input type="radio" name="q4" onclick="feedback('d', 4)"> d. Chicken nuggets</label>
     </div>
     <div class="feedback" id="fb4"></div>
   </div>
 
   <div class="question-card">
-    <div class="question">5. If I disappeared, you’d probably find me…</div>
+    <div class="question">6. If I disappeared, you’d probably find me…</div>
     <div class="answers">
-      <label><input type="radio" name="q5" onclick="feedback(this, true, 5)"> a. Hiding in a blanket burrito googling STUFF</label>
-      <label><input type="radio" name="q5" onclick="feedback(this, false, 5)"> b. In a forest talking to squirrels</label>
-      <label><input type="radio" name="q5" onclick="feedback(this, false, 5)"> c. At a bookstore pretending I read</label>
-      <label><input type="radio" name="q5" onclick="feedback(this, false, 5)"> d. At the gym (LMAO)</label>
+      <label><input type="radio" name="q5" onclick="feedback('a', 5)"> a. Hiding in a blanket burrito</label>
+      <label><input type="radio" name="q5" onclick="feedback('b', 5)"> b. In a forest talking to squirrels</label>
+      <label><input type="radio" name="q5" onclick="feedback('c', 5)"> c. At a bookstore pretending I read</label>
+      <label><input type="radio" name="q5" onclick="feedback('d', 5)"> d. At the gym (LMAO)</label>
     </div>
     <div class="feedback" id="fb5"></div>
   </div>
@@ -108,29 +119,47 @@
   <script>
     const feedbackTexts = {
       1: {
-        true: "mirror talks = therapy",
-        false: "LMAO no?? You clearly haven't been in my bathroom at 2am."
+        a: "No... I usually pop them",
+        b: "Who the devil would do such a thing?",
+        c: "That’s jail-worthy",
+        d: "mirror talks = therapy"
       },
       2: {
-        true: "That's right. I see through souls like sunglasses",
-        false: "Nope. I'm not magic… I'm just observant 😌"
+        a: "Yeah, that's why you see me every day",
+        b: "true, but not from miles away, so false",
+        c: "SPOT ON! I see through souls like sunglasses",
+        d: "Not a superpower. It's a FACT."
       },
       3: {
-        false: "Hmm... interesting choice. I’ll judge you in silence 😏"
+        a: "I said ME, not YOU.",
+        b: "You really thought I'm dumb? I'm wonded",
+        c: "Yeah yeah. I need  to hide my mouth bones more often",
+        d: "I'm not a flying butter sir."
       },
       4: {
-        false: "WELL IT DOESN'T MATTER!! I would fight any child over ANY FOOD. 🥊🍗"
+        a: "I would spank them over this",
+        b: "Nah, oh HEY! you promised me Brownies",
+        c: "What the fuck are you thinking?",
+        d: "Sure, I would kill a kid or 2 over this"
       },
       5: {
-        true: "Yes. don't ask what kinda stuff lady.",
-        false: "Really? Me? There? Delete my number."
+        a: "Yeah exactly. Ze bist place",
+        b: "Actually no, I only speak Frog",
+        c: "No, I don't PrETeNd.",
+        d: "HAHAHAHAHAHAHAHA"
+      },
+      6: {
+        a: "No, I'm Batman on the rest of the week",
+        b: "The most boring option you could ever choose... ugh",
+        c: "Did you just call me a monkey? 😑",
+        d: "YES, cause I'm taken out to the wilderness"
       }
     };
 
-    function feedback(input, isCorrect, qNum, alwaysWrong = false) {
+    function feedback(option, qNum) {
       const fb = document.getElementById(`fb${qNum}`);
       const textSet = feedbackTexts[qNum];
-      fb.innerText = alwaysWrong ? textSet.false : (isCorrect ? textSet.true : textSet.false);
+      fb.innerText = textSet[option] || "No feedback found.";
     }
   </script>
 
