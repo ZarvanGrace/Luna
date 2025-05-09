@@ -88,11 +88,12 @@
 
   <br><br>
 
-  <button class="hidden-button" onclick="handleClick()">The Cheese Button</button>
+  <button class="hidden-button" onclick="handleClick()">Don’t Click This</button>
 
   <div id="secret-message"></div>
 
   <a class="footer-link" href="quiz.html">How well do you know me?</a>
+  <a class="footer-link" href="FortuneTeller.html">🔮 Luna's Fortune Teller 🔮</a>
 
   <script>
     let clickCount = 0;
@@ -103,14 +104,14 @@
       clickCount++;
       if (clickCount === 1) {
         messageDiv.style.display = 'block';
-        messageDiv.innerText = "You want the cheese, huh?";
+        messageDiv.innerText = "Wow. You actually clicked it.";
       } else if (clickCount === 2) {
-        messageDiv.innerText = "Oh you're carving that cheese, aren't ye?";
+        messageDiv.innerText = "Still clicking? Bold of you.";
       } else if (clickCount === 3) {
-        messageDiv.innerHTML = "Oops, looks like Jerry has taken all the cheese";
+        messageDiv.innerHTML = "Third click? You're really committed to bad decisions.";
       } else if (clickCount === 4) {
-        messageDiv.innerText = `WELL TOO BAD LUNA. No more cheese around here
-        Now go touch some grass… or stay here, whatever.`;
+        messageDiv.innerText = `Okay, now the FBI is involved.
+        HAVE A RUN FOR IT`;
         button.disabled = true;
         button.style.opacity = 0.5;
         button.style.cursor = 'not-allowed';
