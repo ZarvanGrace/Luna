@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fortune Teller ✨🔮</title>
+  <style>
+    body {
+      background: linear-gradient(to left, #ffccf9, #fcd5ce);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #5a005a;
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .fortune-box {
+      background: #fff0f5;
+      border: 3px dashed #ff69b4;
+      padding: 20px;
+      border-radius: 20px;
+      margin-top: 30px;
+      display: inline-block;
+      box-shadow: 0 0 15px #ffb6c1;
+      max-width: 500px;
+    }
+    button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff1493;
+    }
+    .footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #a052a3;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔮 Luna's Fortune Teller 🔮</h1>
+  <p>Your destiny awaits... Click the button to reveal your totally accurate fortune.</p>
+
+  <div class="fortune-box" id="fortune">✨ Click below to unlock your fate ✨</div>
+
+  <br />
+  <button onclick="tellFortune()">Reveal My Fortune</button>
+
+  <div class="footer">Made with Stardust ✨ and DarkMagic 🔮</div>
+
+  <script>
+  const fortunes = [
+	"You’ll fall in love with a movie character... again.",
+	"You will trip over nothing today. It’s the universe testing your anger.",
+	"You will accidentally open the front camera and question your existence.",
+	"You may be tiny, but your punches come with sound effects.",
+	"Someone will call you tiny today. Their survival is uncertain.",
+	"The Stardust say you're in charge today... like every other day.",
+	"Someone will test your patience today. Only god can save them.",
+	"You're not bossy. You're just strong and independent.",
+	"A tall person will annoy you. You'll remind them height isn’t a skill.",
+	"You’ll win an argument today just by standing there with your arms crossed.",
+	"A walk will fix everything. Except the past.",
+	"Soon, you’ll flirt with someone using only eyebrow movements. And it’ll work.",
+	"An unexpected compliment is coming. You’ll say ‘no’ and immediately treasure it forever.",
+	"Your strength is loud, but your loyalty is louder.",
+	"You will soon offer great advice that you personally will not follow.",
+	"Today, you’ll pretend to hate something cute. But you’ll save it secretly.",
+	"Someone is smiling right now because they remembered something you said.",
+	"You don’t have a heart of stone. It’s more like… cold lava.",
+	"Someone out there looks up to you more than they’ll ever say.",
+	"You make people feel like they can be real. That’s a rare kind of magic.",
+	"You are loved, you idiot. Accept it or fight me.",
+	"You are proof that being real is more powerful than being perfect.",
+	"A stranger will mistake you for someone soft. That’s on them.",
+	"One day you'll heal. Until then, walk dramatically and look hot.",
+	"Today’s vibe: mildly threatening.",
+	"You’ll say “trust me” and no one will question it.",
+	"Someone will ask if you're mad. You're not. Yet.",
+	"Today, silence will speak louder. Especially yours.",
+	"A friend will say something soft. You’ll insult them back. It’s love.",
+	"You may not feel strong today. But you still scare weak men. Carry on.",
+	"An awkward moment will become a great story later.",
+	"Someone is thinking about messaging you. They just don’t know how to start.",
+	"You’ll make it through this. You always do.",
+	"The thing you’re overthinking won’t matter a year from now.",
+	"You will find joy in the small things today—maybe coffee, maybe a meme.",
+	"The person next to you has no idea what they’re doing either.",
+	"You are not behind. You are on your own path.",
+	"You’ll remember something embarrassing today—and then move on.",
+	"Your future self is grateful for the little steps you’re taking now.",
+	"Don’t trust your 2 a.m. thoughts. They’re dramatic.",
+	"A good nap might solve more than you think.",
+	"Someone you forgot remembers you.",
+	"You will overthink a text and still send it.",
+	"You are doing better than you think. Really.",
+	"You are allowed to rest without feeling guilty.",
+	"Life is weird right now, but you’re adapting like a pro.",
+	"You might make a mistake today—and that’s completely human.",
+	"Your vibe is someone’s favorite thing.",
+	"You’ll have a random deep thought and pretend you’re a philosopher.",
+	"Someone will laugh at your joke. Possibly even on purpose.",
+	"It’s okay to change your mind. You’re growing.",
+	"A quiet victory is still a victory.",
+	"You don’t have to be perfect to be loved.",
+	"There’s still time to turn this day around. unless it's night... then try again tomorrow",
+	"It’s not too late to try again.",
+	"Your next great idea will come in the shower. You'll forget it by the time you're dry.",
+	"You are on the verge of doing something brave… or stupid. Flip a coin.",
+	"You are enough. we don't need more of you.",
+	"Stop wondering if you're good enough. nobody is.",
+	"Stop wondering if people like you. They don't.",
+	"You will be ok. Or won't. One of those.",
+	"One day you will die. But for now you have to live",
+	"You’re doing amazing. But maybe don’t check your bank account.",
+	"Today, you will remember something embarrassing from years ago. Suffer silently.",
+	"Romance is in the air. Just not your air. Someone else’s.",
+	"Today is a good day to pretend you’re productive. Just look serious.",
+	"You’ll zone out mid-conversation and come back nodding like a pro.",
+	"Soon, someone will show you a meme you’ve already seen. Pretend to laugh.",
+	"A person from your past is thinking of you. No, not them. Someone worse.",
+	"Today is your day to shine. Unless it’s humid. Then maybe not.",
+	"You will win an argument. In the shower. With perfect comebacks.",
+	"Someone’s gonna fall for you. Probably after you insult them.",
+	"The next time you say ‘I don’t care,’ you’ll be lying."
+  ];
+
+    // Load from localStorage or initialize
+  let shuffledFortunes = JSON.parse(localStorage.getItem("shuffledFortunes")) || shuffleArray([...fortunes]);
+  let fortuneIndex = parseInt(localStorage.getItem("fortuneIndex") || "0");
+
+  function tellFortune() {
+    if (fortuneIndex >= shuffledFortunes.length) {
+      // All shown, reshuffle
+      shuffledFortunes = shuffleArray([...fortunes]);
+      fortuneIndex = 0;
+    }
+
+    // Show current fortune
+    const currentFortune = shuffledFortunes[fortuneIndex];
+    document.getElementById("fortune").innerText = currentFortune;
+
+    // Advance and save
+    fortuneIndex++;
+    localStorage.setItem("shuffledFortunes", JSON.stringify(shuffledFortunes));
+    localStorage.setItem("fortuneIndex", fortuneIndex);
+  }
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  </script>
+</body>
+</html>
