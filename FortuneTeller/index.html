@@ -4,16 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fortune Teller ✨🔮</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" rel="stylesheet">
   <style>
     body {
       background: linear-gradient(to left, #ffccf9, #fcd5ce);
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: 'Raleway', sans-serif;
       text-align: center;
       padding: 50px;
       color: #5a005a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
     }
     h1 {
-      font-size: 1.5em;
+      font-size: 1.3em;
       margin-bottom: 10px;
     }
     .fortune-box {
@@ -23,8 +29,9 @@
       border-radius: 20px;
       margin-top: 30px;
       display: inline-block;
-      box-shadow: 0 0 15px #ffb6c1;
+      box-shadow: 0 0 15px #c0c0c0;
       max-width: 500px;
+      color: #121212;
     }
     button {
       background: #ff69b4;
@@ -40,23 +47,24 @@
     button:hover {
       background: #ff1493;
     }
-    .footer {
-      margin-top: 50px;
+    footer {
+      position: absolute;
+      bottom: 20px;
       font-size: 0.9em;
-      color: #a052a3;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <h1>🔮 Luna's Fortune Teller 🔮</h1>
-  <p>Your destiny awaits... Click the button to reveal your totally accurate fortune.</p>
+  <p>Your destiny awaits... Click the button to reveal your *totally accurate* fortune.</p>
 
   <div class="fortune-box" id="fortune">✨ Click below to unlock your fate ✨</div>
 
   <br />
   <button onclick="tellFortune()">Reveal My Fortune</button>
 
-  <div class="footer">Made with Stardust ✨ and DarkMagic 🔮</div>
+  <footer>Made with Stardust ✨ and DarkMagic 🔮</footer>
 
   <script>
   const fortunes = [
